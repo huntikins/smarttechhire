@@ -14,28 +14,28 @@
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
-
-			<?php
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				get_template_part( 'template-parts/content/content', 'page' );
-
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+<section id="primary" class="has-light-background-color">
+	<main id="main">
+		<section id="hero" class="hero">
+			<div class="hero__content text-light">
+				<h1 class="hero__content-title">High-touch technical recruiting by people-focused engineers</h1>
+				<p class="hero__content-body"></p>
+				<div class="hero__content-cta">
+					<a href="#" class="sth:btn sth:btn--primary"></a>
+					<a href="#" class="sth:btn sth:btn--secondary"></a>
+				</div>
+			</div>
+		</section><!-- #hero -->
+		<section id="about-us" class="about"></section><!-- #about-us -->
+		<section id="who-we-serve" class="serve"></section><!-- #who-we-serve -->
+		<section id="who-we-place" class="place"></section><!-- #who-we-place -->
+		<section id="we-care" class="care"></section><!-- #we-care -->
+		<section id="our-team" class="team"></section><!-- #our-team -->
+		<section id="our-founder" class="founder"></section><!-- #our-founder -->
+		<section id="what-sets-us-apart" class="good"></section><!-- #what-sets-us-apart -->
+		<section id="contact" class="contact"></section><!-- #contact -->
+	</main><!-- #main -->
+</section><!-- #primary -->
 
 <?php
-get_footer();
+//get_footer();
