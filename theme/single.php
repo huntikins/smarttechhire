@@ -4,47 +4,37 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _tw
+ * @package smarttechhire.com
  */
 
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
+	<main id="primary" class="site-main">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content/content', 'single' );
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-				if ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation(
-						array(
-							'next_text' => '<span aria-hidden="true">' . __( 'Next Post', '_tw' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Next post:', '_tw' ) . '</span> <br/>' .
-								'<span>%title</span>',
-							'prev_text' => '<span aria-hidden="true">' . __( 'Previous Post', '_tw' ) . '</span> ' .
-								'<span class="sr-only">' . __( 'Previous post:', '_tw' ) . '</span> <br/>' .
-								'<span>%title</span>',
-						)
-					);
-				}
+			get_template_part( 'template-parts/content', get_post_type() );
 
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'smarttechhire-com' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'smarttechhire-com' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
 
-				// End the loop.
-			endwhile;
-			?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		endwhile; // End of the loop.
+		?>
+
+	</main><!-- #main -->
 
 <?php
+get_sidebar();
 get_footer();

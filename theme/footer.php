@@ -11,13 +11,10 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
-
-</div><!-- #page -->
-
+</main><!-- #page -->
+<?php get_template_part('template-parts/layout/footer', 'content'); ?>
 <?php wp_footer(); ?>
-
+<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 </body>
+
 </html>

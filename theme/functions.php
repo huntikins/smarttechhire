@@ -80,8 +80,10 @@ if ( ! function_exists( '_tw_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', '_tw' ),
-				'menu-2' => __( 'Footer Menu', '_tw' ),
+				'primary' => __( 'Primary', '_tw' ),
+				'secondary_social' => __( 'Secondary - Social', '_tw' ),
+				'secondary_contact' => __( 'Secondary - Contact', '_tw' ),
+				'footer' => __( 'Footer', '_tw' ),
 			)
 		);
 
@@ -92,9 +94,6 @@ if ( ! function_exists( '_tw_setup' ) ) :
 		add_theme_support(
 			'html5',
 			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
 				'gallery',
 				'caption',
 				'style',
@@ -214,3 +213,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Removes title tag from wp-head
+ */
+remove_action( 'wp_head', '_wp_render_title_tag', 1 );

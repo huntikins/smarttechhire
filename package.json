@@ -23,6 +23,7 @@
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.4.0",
+    "tailwindcss-animation-delay": "^1.2.0",
     "touch": "^3.1.0"
   },
   "scripts": {
@@ -67,5 +68,9 @@
   "bugs": {
     "url": "https://github.com/huntikins/smarttechhire/issues"
   },
-  "homepage": "https://github.com/huntikins/smarttechhire#readme"
+  "homepage": "https://github.com/huntikins/smarttechhire#readme",
+  "dependencies": {
+    "tailwindcss-animation-delay": "^1.2.0",
+    "taos": "^1.0.5"
+  }
 }
