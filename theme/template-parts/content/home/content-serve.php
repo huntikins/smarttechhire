@@ -60,6 +60,14 @@
         </ul>
     </div>
     <div class="flex items-center justify-center order-1 w-full p-6 pb-0 md:w-1/2 md:order-2 md:p-8 lg:p-12 md:pb-0 lg:pb-0">
-        <img class="block py-8" src="/wp-content/themes/smarttechhire/theme/assets/who_we_serve.svg" alt="">
+        <?
+        $section_image = CFS()->get('sth_serve_image');
+
+        if ($section_image) {
+            ?>
+            <img class="block py-8" aria-hidden="true" src="<?php echo $section_image; ?>" alt="">
+            <?php
+        }
+        ?>
     </div>
 </div>

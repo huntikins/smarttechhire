@@ -36,9 +36,20 @@ module.exports = {
 					'50%': { opacity: 0.6 },
 					'100%': { opacity: 1 },
 				},
+				'slide-down': {
+					'0%': {
+						transform: 'translateY(-100px)',
+						opacity: 0,
+					},
+					'100%': {
+						transform: 'translateY(0px)',
+						opacity: 1,
+					},
+				},
 			},
 			animation: {
 				'fade-in': 'fade-in 1s ease-in',
+				'slide-down': 'slide-down .75s ease-out',
 			},
 		},
 	},
@@ -49,8 +60,8 @@ module.exports = {
 	safelist: [
 		'!duration-[0ms]',
 		'!delay-[0ms]',
-		'html.js :where([class*="taos:"]:not(.taos-init))'
-	  ],
+		'html.js :where([class*="taos:"]:not(.taos-init))',
+	],
 	plugins: [
 		// Add Tailwind Typography (via _tw fork).
 		require('@_tw/typography'),
@@ -63,6 +74,6 @@ module.exports = {
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/container-queries'),
 		require('tailwindcss-animation-delay'),
-		require('taos/plugin')
+		require('taos/plugin'),
 	],
 };

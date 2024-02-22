@@ -70,6 +70,7 @@
   },
   "homepage": "https://github.com/huntikins/smarttechhire#readme",
   "dependencies": {
+    "alpinejs": "^3.13.5",
     "tailwindcss-animation-delay": "^1.2.0",
     "taos": "^1.0.5"
   }

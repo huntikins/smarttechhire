@@ -1,6 +1,14 @@
 <div class="flex flex-col justify-center py-12 md:py-0 md:flex-row items-between md:justify-between md:items-center">
     <div class="flex flex-col items-center justify-center w-full mb-8 md:mb-0 md:mx-8">
-        <img class="block w-full" src="/wp-content/themes/smarttechhire/theme/assets/about_us.svg" alt="">
+        <?
+        $section_image = CFS()->get('sth_about_image');
+
+        if ($section_image) {
+            ?>
+            <img class="block w-full" aria-hidden="true" src="<?php echo $section_image; ?>" alt="">
+            <?php
+        }
+        ?>
     </div>
     <div class="flex flex-col items-end justify-center w-full text-right">
         <h2 class="w-full text-xl md:text-2xl lg:text-3xl xl:text-4xl font-josefin animate-fade-in animation-delay-100">

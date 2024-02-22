@@ -1,9 +1,11 @@
-<header id="header" class="absolute top-0 left-0 z-10 w-screen pt-3 md:pt-5 lg:pt-8">
-	<?php $title = get_option('blogname'); ?>
-	<nav id="secondary" class="flex items-center justify-between w-full px-6 mx-auto max-w-9xl md:px-8 lg:px-12">
+<header x-data="headerMenu" :aria-expanded="displayMobileMenu" id="header" class="fixed top-0 left-0 z-10 w-screen lg:absolute lg:pt-8">
+	<?php $title = get_option('blogname');
+	$logo = wp_get_attachment_image(get_theme_mod('title_logo_tagline'), "", "", array("class" => "block w-auto h-8 md:h-16 lg:h-24"));
+	?>
+	<nav id="secondary"
+		class="relative z-20 flex items-center justify-between w-full p-6 mx-auto bg-slate-800 lg:bg-transparent max-w-9xl md:p-8 md:px-8 lg:py-0 lg:px-12">
 		<div class="flex items-center justify-start lg:hidden animation-delay-100 animate-fade-in">
-			<img class="block h-8 md:h-16 lg:h-24"
-				src="<?php echo get_theme_mod('title_logo_tagline'); ?>" alt="">
+			<? echo $logo; ?>
 			<div class="ml-2 text-xl font-black md:ml-3 md:text-2xl font-josefin text-light">
 				<?php echo $title; ?>
 			</div>
@@ -76,9 +78,10 @@
 				<?php } ?>
 			</ul>
 		</div>
-		<div class="flex items-center justify-end lg:hidden animation-delay-100 animate-fade-in">
-			<svg class="w-5 h-5 md:w-10 md:h-10 text-light" fill="none" viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg">
+		<button type="button" aria-controls="primary-mobile" aria-label="Open mobile menu"
+			class="flex items-center justify-end lg:hidden animation-delay-100 animate-fade-in"
+			@click="handleMenuToggle">
+			<svg class="w-10 h-10 text-light" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M22 18.0048C22 18.5544 21.5544 19 21.0048 19H12.9952C12.4456 19 12 18.5544 12 18.0048C12 17.4552 12.4456 17.0096 12.9952 17.0096H21.0048C21.5544 17.0096 22 17.4552 22 18.0048Z"
 					fill="currentColor" />
@@ -89,14 +92,14 @@
 					d="M21.0048 6.99039C21.5544 6.99039 22 6.54482 22 5.99519C22 5.44556 21.5544 5 21.0048 5H8.99519C8.44556 5 8 5.44556 8 5.99519C8 6.54482 8.44556 6.99039 8.99519 6.99039H21.0048Z"
 					fill="currentColor" />
 			</svg>
-		</div>
+		</button>
 	</nav>
-	<hr class="w-full my-4 mt-3 shadow-sm md:my-6 lg:my-8 border-t-1 border-light opacity-20">
-	<nav id="primary"
+	<hr class="hidden w-full my-4 shadow-sm lg:mt-3 lg:my-8 border-t-1 lg:block border-light opacity-20">
+	<nav id="primary-desktop"
 		class="items-center justify-between hidden w-full px-6 mx-auto lg:flex max-w-9xl md:px-8 lg:px-12">
 		<div class="flex items-center justify-start animation-delay-100 animate-fade-in">
-			<img class="block h-8 md:h-16 lg:h-24"
-				src="<?php echo get_theme_mod('title_logo_tagline'); ?>" alt="">
+			<?php $logo = wp_get_attachment_image(get_theme_mod('title_logo_tagline'), "", "", array("class" => "block w-auto h-8 md:h-16 lg:h-24")); ?>
+			<?php echo $logo; ?>
 			<div class="ml-2 text-xl font-black md:ml-3 md:text-2xl lg:ml-5 lg:text-3xl font-josefin text-light">
 				<?php echo $title; ?>
 			</div>
@@ -107,6 +110,22 @@
 				array(
 					'menu' => "header",
 					'menu_class' => "flex items-center justify-end text-base font-extrabold transition-opacity text-light font-josefin",
+					'container' => false,
+					'walker' => new STH_Nav_Walker(),
+					'echo' => true,
+				)
+			);
+			?>
+		</div>
+	</nav>
+	<nav id="primary-mobile" x-show="displayMobileMenu"
+		class="relative z-10 flex items-start justify-start w-full p-6 mx-auto -mt-1 transition-all bg-slate-800 lg:hidden max-w-9xl md:p-8 animate-slide-down">
+		<div class="flex items-start justify-start uppercase animate-fade-in">
+			<?php
+			wp_nav_menu(
+				array(
+					'menu' => "header",
+					'menu_class' => "flex items-start flex-col justify-start text-base font-extrabold text-light font-josefin",
 					'container' => false,
 					'walker' => new STH_Nav_Walker(),
 					'echo' => true,

@@ -8,3 +8,17 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.data('headerMenu', () => ({
+	displayMobileMenu: false,
+
+	handleMenuToggle() {
+		this.displayMobileMenu = !this.displayMobileMenu;
+	},
+}));
+
+Alpine.start();
