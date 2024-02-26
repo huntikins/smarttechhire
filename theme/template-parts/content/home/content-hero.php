@@ -27,7 +27,7 @@
 
             <a href="<?php echo $link_cta_2['url']; ?>" aria-label="<?php echo CFS()->get('sth_cta_2_a11y_label'); ?>"
                 target="<?php echo $link_cta_2['target']; ?>"
-                class="block w-2/3 px-6 py-3 text-base font-extrabold text-center ease-in-out rounded shadow-lg animation-delay-100 animate-fade-in hover:opacity-80 md:text-xl md:w-auto motion-reduce:transition-none motion-reduce:hover:transform-none bold bg-secondary text-light font-josefin hover:scale-105 active:scale-95">
+                class="block w-2/3 px-6 py-3 text-base font-extrabold text-center text-black ease-in-out rounded shadow-lg animation-delay-100 animate-fade-in hover:opacity-80 md:text-xl md:w-auto motion-reduce:transition-none motion-reduce:hover:transform-none bold bg-secondary font-josefin hover:scale-105 active:scale-95">
                 <?php echo $link_cta_2['text']; ?>
             </a>
         <?php } ?>

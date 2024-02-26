@@ -11,7 +11,7 @@ $logo = wp_get_attachment_image(get_theme_mod('title_logo_tagline'), "", "", arr
 ?>
 
 <footer id="footer">
-	<div class="py-10 text-base font-extrabold transition-opacity lg:text-xl bg-foreground text-primary font-josefin">
+	<div class="py-10 text-base font-extrabold transition-opacity lg:text-xl bg-foreground text-primary-footer font-josefin">
 		<a href="#main" class="flex items-center justify-center w-full pb-6 text-center lg:hidden">
 			<? echo $logo; ?>
 		</a>

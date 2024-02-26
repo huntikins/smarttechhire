@@ -25,9 +25,10 @@ module.exports = {
 			},
 			colors: {
 				light: '#FEFEFE',
-				foreground: '#D9D9D9',
-				primary: '#0652E9',
-				secondary: '#38B6FF',
+				foreground: '#F0F0F0',
+				primary: '#0048D8',
+				'primary-footer': '#0038A7',
+				secondary: '#79CEFF',
 				tertiary: 'rgba(56, 182, 255, 0.5)',
 			},
 			keyframes: {
