@@ -1,4 +1,5 @@
-<header x-data="headerMenu" :aria-expanded="displayMobileMenu" id="header" class="fixed top-0 left-0 z-10 w-screen lg:absolute lg:pt-8">
+<header x-data="headerMenu" :aria-expanded="displayMobileMenu" id="header"
+	class="fixed top-0 left-0 z-10 w-screen lg:absolute lg:pt-8">
 	<?php $title = get_option('blogname');
 	$logo = wp_get_attachment_image(get_theme_mod('title_logo_tagline'), "", "", array("class" => "block w-auto h-8 md:h-16 lg:h-24"));
 	?>
@@ -53,25 +54,30 @@
 		</div>
 		<div class="items-center justify-end hidden lg:flex">
 			<ul class="flex w-full text-light animation-delay-100 animate-fade-in">
-				<?php $email = esc_url(get_theme_mod('title_email_tagline'));
+				<?php 
+				$email = esc_url(get_theme_mod('title_email_tagline'));
 				$email = preg_replace("(^https?://)", "", $email);
+
+				$email_alt = esc_url(get_theme_mod('title_email_tagline-a11y'));
+				$email_alt = preg_replace("(^https?://)", "", $email);
 
 				if ($email) {
 					?>
 					<li class="mr-8">
-						<a class="text-lg underline lg:text-xl hover:opacity-60" href="mailto:<?php echo $email; ?>">
-							<?php
-
-							echo $email; ?>
+						<a aria-label="<?php echo $email_alt; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="mailto:<?php echo $email; ?>">
+							<?php echo $email; ?>
 						</a>
 					</li>
 				<?php }
 				$tel = esc_url(get_theme_mod('title_tel_tagline'));
 				$tel = preg_replace("(^https?://)", "", $tel);
 
+				$tel_alt = esc_url(get_theme_mod('title_tel_tagline-a11y'));
+				$tel_alt = preg_replace("(^https?://)", "", $tel);
+
 				if ($tel) { ?>
 					<li>
-						<a class="text-lg underline lg:text-xl hover:opacity-60" href="tel:<?php echo $tel; ?>">
+						<a aria-label="<?php echo $tel_alt; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="tel:<?php echo $tel; ?>">
 							<?php echo $tel; ?>
 						</a>
 					</li>

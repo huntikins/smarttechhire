@@ -287,6 +287,21 @@ function sth_customize_register($wp_customize)
 		)
 	);
 
+	$wp_customize->add_setting('title_email_tagline-a11y', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_email-a11y_control',
+			array(
+				'label' => __('Email Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_email_tagline-a11y',
+				'type' => 'email',
+				'priority' => '60'
+			)
+		)
+	);
+
 	$wp_customize->add_setting('title_tel_tagline', array('type' => 'theme_mod'));
 	$wp_customize->add_control(
 		new WP_Customize_Control(
@@ -296,6 +311,21 @@ function sth_customize_register($wp_customize)
 				'label' => __('Phone Number', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_tel_tagline',
+				'type' => 'tel',
+				'priority' => '60'
+			)
+		)
+	);
+
+	$wp_customize->add_setting('title_tel_tagline-a11y', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_tel-a11y_control',
+			array(
+				'label' => __('Phone Number Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_tel_tagline-a11y',
 				'type' => 'tel',
 				'priority' => '60'
 			)
