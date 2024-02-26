@@ -15,7 +15,7 @@
 			<ul class="flex w-full animation-delay-100 animate-fade-in">
 				<?php
 				$facebook = esc_url(get_theme_mod('title_facebook_tagline'));
-				$facebook_a11y = esc_url(get_theme_mod('title_facebooka11y_tagline'));
+				$facebook_a11y = get_theme_mod('title_facebooka11y_tagline');
 
 				if ($facebook) {
 					?>
@@ -27,7 +27,7 @@
 				<?php }
 
 				$twitter = esc_url(get_theme_mod('title_twitter_tagline'));
-				$twitter_a11y = esc_url(get_theme_mod('title_twittera11y_tagline'));
+				$twitter_a11y = get_theme_mod('title_twittera11y_tagline');
 
 				if ($twitter) {
 					?>
@@ -40,7 +40,7 @@
 					</li>
 				<?php }
 				$linkedin = esc_url(get_theme_mod('title_linkedin_tagline'));
-				$linkedin_a11y = esc_url(get_theme_mod('title_linkedina11y_tagline'));
+				$linkedin_a11y = get_theme_mod('title_linkedina11y_tagline');
 
 				if ($linkedin) {
 					?>
@@ -58,7 +58,7 @@
 				$email = esc_url(get_theme_mod('title_email_tagline'));
 				$email = preg_replace("(^https?://)", "", $email);
 
-				$email_alt = esc_url(get_theme_mod('title_emaila11y_tagline'));
+				$email_alt = get_theme_mod('title_emaila11y_tagline');
 				$email_alt = preg_replace("(^https?://)", "", $email_alt);
 
 				if ($email) {
@@ -72,7 +72,7 @@
 				$tel = esc_url(get_theme_mod('title_tel_tagline'));
 				$tel = preg_replace("(^https?://)", "", $tel);
 
-				$tel_alt = esc_url(get_theme_mod('title_tela11y_tagline'));
+				$tel_alt = get_theme_mod('title_tela11y_tagline');
 				$tel_alt = preg_replace("(^https?://)", "", $tel_alt);
 
 				if ($tel) { ?>
@@ -85,7 +85,7 @@
 			</ul>
 		</div>
 		<?php 
-		 $mobile_menu_alt = esc_url(get_theme_mod('title_mobilemenua11y_tagline'));
+		 $mobile_menu_alt = get_theme_mod('title_mobilemenua11y_tagline');
 		 $mobile_menu_alt = preg_replace("(^https?://)", "", $mobile_menu_alt);
 		?>
 		<button type="button" aria-controls="primary-mobile" aria-label="Open mobile menu"
