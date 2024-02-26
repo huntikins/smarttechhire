@@ -32,7 +32,7 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[0]['sth_canidate']; ?>
                 </span>
-                <svg class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.325 3.05011L8.66741 20.4323L10.5993 20.9499L15.2568 3.56775L13.325 3.05011Z"
                         fill="currentColor" />
@@ -48,7 +48,7 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[1]['sth_canidate']; ?>
                 </span>
-                <svg class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M14.738 19.9964C14.8186 19.9988 14.8994 20 14.9806 20C19.3989 20 22.9806 16.4183 22.9806 12C22.9806 7.58172 19.3989 4 14.9806 4C12.4542 4 10.2013 5.17108 8.73522 7H7.51941C3.92956 7 1.01941 9.91015 1.01941 13.5C1.01941 17.0899 3.92956 20 7.51941 20H14.5194C14.5926 20 14.6654 19.9988 14.738 19.9964ZM16.6913 17.721C19.0415 16.9522 20.9806 14.6815 20.9806 12C20.9806 8.68629 18.2943 6 14.9806 6C11.6669 6 8.98059 8.68629 8.98059 12H6.98059C6.98059 10.9391 7.1871 9.92643 7.56211 9H7.51941C5.03413 9 3.01941 11.0147 3.01941 13.5C3.01941 15.9853 5.03413 18 7.51941 18H14.5194C15.0691 18 15.9041 17.9014 16.6913 17.721Z"
@@ -59,7 +59,7 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[2]['sth_canidate']; ?>
                 </span>
-                <svg class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 9V7H7V9H5Z" fill="currentColor" />
                     <path d="M9 9H19V7H9V9Z" fill="currentColor" />
@@ -74,7 +74,7 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[3]['sth_canidate']; ?>
                 </span>
-                <svg class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M13.0352 7.98797L13.0374 13.988L17.0374 13.9865L17.0352 7.98653L13.0352 7.98797Z"
@@ -91,10 +91,23 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[4]['sth_canidate']; ?>
                 </span>
-                <svg class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M17 7C17 5.34315 15.6569 4 14 4H10C8.34315 4 7 5.34315 7 7H6C4.34315 7 3 8.34315 3 10V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V10C21 8.34315 19.6569 7 18 7H17ZM14 6H10C9.44772 6 9 6.44772 9 7H15C15 6.44772 14.5523 6 14 6ZM6 9H18C18.5523 9 19 9.44772 19 10V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18V10C5 9.44772 5.44772 9 6 9Z"
+                        fill="currentColor" />
+                </svg>
+            </li>
+            <li class="flex items-center justify-end pb-4">
+                <span class="text-lg font-extrabold">
+                    <?php echo $fields[5]['sth_canidate']; ?>
+                </span>
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.2426 16.3137L6 12.071L7.41421 10.6568L10.2426 13.4853L15.8995 7.8284L17.3137 9.24262L10.2426 16.3137Z"
+                        fill="currentColor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                         fill="currentColor" />
                 </svg>
             </li>
