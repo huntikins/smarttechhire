@@ -17,7 +17,7 @@ class STH_Nav_Walker extends Walker_Nav_Menu
         $output .= '<li class="mb-4 lg:mb-0 lg:ml-7 hover:opacity-60">';
 
         // Link attributes.
-        $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes = !empty($item->title) ? ' title="' . esc_attr($item->title) . '"' : '';
         $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
         $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
         $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';

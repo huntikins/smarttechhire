@@ -64,9 +64,8 @@
         $section_image = CFS()->get('sth_serve_image');
 
         if ($section_image) {
-            ?>
-            <img class="block py-8" aria-hidden="true" src="<?php echo $section_image; ?>" alt="">
-            <?php
+            $image = wp_get_attachment_image($section_image, "", "", array("class" => "block py-8"));
+            echo $image;
         }
         ?>
     </div>

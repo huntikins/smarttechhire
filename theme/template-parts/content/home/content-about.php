@@ -1,13 +1,12 @@
 <div class="flex flex-col justify-center py-12 md:py-0 md:flex-row items-between md:justify-between md:items-center">
     <div class="flex flex-col items-center justify-center w-full mb-8 md:mb-0 md:mx-8">
         <?
-        $section_image = CFS()->get('sth_about_image');
+            $section_image = CFS()->get('sth_about_image');
 
-        if ($section_image) {
-            ?>
-            <img class="block w-full" aria-hidden="true" src="<?php echo $section_image; ?>" alt="">
-            <?php
-        }
+            if ($section_image) {
+                $image = wp_get_attachment_image($section_image, "", "", array("class" => "block w-full"));
+                echo $image;
+            }
         ?>
     </div>
     <div class="flex flex-col items-end justify-center w-full text-right">

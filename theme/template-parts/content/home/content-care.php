@@ -40,9 +40,8 @@
         $section_image = CFS()->get('sth_care_image');
 
         if ($section_image) {
-            ?>
-            <img class="block w-full" aria-hidden="true" src="<?php echo $section_image; ?>" alt="">
-            <?php
+            $image = wp_get_attachment_image($section_image, "", "", array("class" => "block w-full"));
+            echo $image;
         }
         ?>
     </div>

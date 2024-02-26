@@ -112,21 +112,21 @@ if (!function_exists('sth_setup')):
 
 					if ($count < (count($menu_items) / 2)) {
 						$menu_list .= '<li class="mt-5 md:mt-0 md:mr-5 lg:mr-7 hover:opacity-60">' . "\n";
-						$menu_list .= '<a href="' . $link . '" class="title">' . $title . '</a>' . "\n";
+						$menu_list .= '<a href="' . $link . '" class="title" title="' . $title . '">' . $title . '</a>' . "\n";
 						$menu_list .= '</li>' . "\n";
 					} elseif ((count($menu_items) / 2) == $count) {
 						if ($logo) {
 
 							$menu_list .= '<li class="hidden mx-10 lg:block hover:opacity-60">' . "\n";
-							$menu_list .= '<a href="#main">' . $logo . '</a>' . "\n";
+							$menu_list .= '<a href="https://smarttechhire.com#main" title="Scroll to top">' . $logo . '</a>' . "\n";
 							$menu_list .= '</li>' . "\n";
 						}
 						$menu_list .= '<li class="mt-5 md:mt-0 md:ml-5 lg:ml-7 hover:opacity-60">' . "\n";
-						$menu_list .= '<a href="' . $link . '" class="title">' . $title . '</a>' . "\n";
+						$menu_list .= '<a href="' . $link . '" class="title" title="' . $title . '">' . $title . '</a>' . "\n";
 						$menu_list .= '</li>' . "\n";
 					} else {
 						$menu_list .= '<li class="mt-5 md:mt-0 md:ml-5 lg:ml-7 hover:opacity-60">' . "\n";
-						$menu_list .= '<a href="' . $link . '" class="title">' . $title . '</a>' . "\n";
+						$menu_list .= '<a href="' . $link . '" class="title" title="' . $title . '">' . $title . '</a>' . "\n";
 						$menu_list .= '</li>' . "\n";
 					}
 					$count++;
@@ -278,7 +278,7 @@ function sth_customize_register($wp_customize)
 			$wp_customize,
 			'sth_title_email_control',
 			array(
-				'label' => __('Email', 'sth'),
+				'label' => __('Email: Address', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_email_tagline',
 				'type' => 'email',
@@ -287,16 +287,16 @@ function sth_customize_register($wp_customize)
 		)
 	);
 
-	$wp_customize->add_setting('title_email_tagline-a11y', array('type' => 'theme_mod'));
+	$wp_customize->add_setting('title_emaila11y_tagline', array('type' => 'theme_mod'));
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'sth_title_email-a11y_control',
+			'sth_title_emaila11y_control',
 			array(
-				'label' => __('Email Accessible Text', 'sth'),
+				'label' => __('Email: Accessible Text', 'sth'),
 				'section' => 'title_tagline',
-				'settings' => 'title_email_tagline-a11y',
-				'type' => 'email',
+				'settings' => 'title_emaila11y_tagline',
+				'type' => 'text',
 				'priority' => '60'
 			)
 		)
@@ -308,7 +308,7 @@ function sth_customize_register($wp_customize)
 			$wp_customize,
 			'sth_title_tel_control',
 			array(
-				'label' => __('Phone Number', 'sth'),
+				'label' => __('Phone Number: Number', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_tel_tagline',
 				'type' => 'tel',
@@ -317,16 +317,16 @@ function sth_customize_register($wp_customize)
 		)
 	);
 
-	$wp_customize->add_setting('title_tel_tagline-a11y', array('type' => 'theme_mod'));
+	$wp_customize->add_setting('title_tela11y_tagline', array('type' => 'theme_mod'));
 	$wp_customize->add_control(
 		new WP_Customize_Control(
 			$wp_customize,
-			'sth_title_tel-a11y_control',
+			'sth_title_tela11y_control',
 			array(
-				'label' => __('Phone Number Accessible Text', 'sth'),
+				'label' => __('Phone Number: Accessible Text', 'sth'),
 				'section' => 'title_tagline',
-				'settings' => 'title_tel_tagline-a11y',
-				'type' => 'tel',
+				'settings' => 'title_tela11y_tagline',
+				'type' => 'text',
 				'priority' => '60'
 			)
 		)
@@ -338,10 +338,25 @@ function sth_customize_register($wp_customize)
 			$wp_customize,
 			'sth_title_facebook_control',
 			array(
-				'label' => __('Facebook', 'sth'),
+				'label' => __('Facebook: URL', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_facebook_tagline',
 				'type' => 'url',
+				'priority' => '60'
+			)
+		)
+	);
+
+	$wp_customize->add_setting('title_facebooka11y_tagline', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_facebooka11y_control',
+			array(
+				'label' => __('Facebook: Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_facebooka11y_tagline',
+				'type' => 'text',
 				'priority' => '60'
 			)
 		)
@@ -353,10 +368,25 @@ function sth_customize_register($wp_customize)
 			$wp_customize,
 			'sth_title_twitter_control',
 			array(
-				'label' => __('Twitter', 'sth'),
+				'label' => __('Twitter: URL', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_twitter_tagline',
 				'type' => 'url',
+				'priority' => '60'
+			)
+		)
+	);
+
+	$wp_customize->add_setting('title_twittera11y_tagline', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_twittera11y_control',
+			array(
+				'label' => __('Twitter: Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_twittera11y_tagline',
+				'type' => 'text',
 				'priority' => '60'
 			)
 		)
@@ -368,10 +398,40 @@ function sth_customize_register($wp_customize)
 			$wp_customize,
 			'sth_title_linkedin_control',
 			array(
-				'label' => __('LinkedIn', 'sth'),
+				'label' => __('LinkedIn: URL', 'sth'),
 				'section' => 'title_tagline',
 				'settings' => 'title_linkedin_tagline',
 				'type' => 'url',
+				'priority' => '60'
+			)
+		)
+	);
+
+	$wp_customize->add_setting('title_linkedina11y_tagline', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_linkedina11y_control',
+			array(
+				'label' => __('LinkedIn: Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_linkedina11y_tagline',
+				'type' => 'text',
+				'priority' => '60'
+			)
+		)
+	);
+
+	$wp_customize->add_setting('title_mobilemenua11y_tagline', array('type' => 'theme_mod'));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sth_title_mobilemenua11y_control',
+			array(
+				'label' => __('Mobile Menu: Accessible Text', 'sth'),
+				'section' => 'title_tagline',
+				'settings' => 'title_mobilemenua11y_tagline',
+				'type' => 'text',
 				'priority' => '60'
 			)
 		)
