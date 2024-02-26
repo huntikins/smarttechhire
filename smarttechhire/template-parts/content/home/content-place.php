@@ -102,7 +102,7 @@
                 <span class="text-lg font-extrabold">
                     <?php echo $fields[5]['sth_canidate']; ?>
                 </span>
-                <svg aria-hidden="true" class="w-5 ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M10.2426 16.3137L6 12.071L7.41421 10.6568L10.2426 13.4853L15.8995 7.8284L17.3137 9.24262L10.2426 16.3137Z"
                         fill="currentColor" />
