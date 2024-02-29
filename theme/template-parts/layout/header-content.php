@@ -64,8 +64,8 @@
 				if ($email) {
 					?>
 					<li class="mr-8">
-						<a title="<?php echo $email; ?>" aria-label="<?php echo $email_alt; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="mailto:<?php echo $email; ?>">
-							<?php echo $email; ?>
+						<a title="<?php echo $email; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="mailto:<?php echo $email; ?>">
+							<?php echo $email_alt; ?>
 						</a>
 					</li>
 				<?php }
@@ -77,8 +77,8 @@
 
 				if ($tel) { ?>
 					<li>
-						<a title="<?php echo $tel; ?>" aria-label="<?php echo $tel_alt; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="tel:<?php echo $tel; ?>">
-							<?php echo $tel; ?>
+						<a title="<?php echo $tel; ?>" class="text-lg underline lg:text-xl hover:opacity-60" href="tel:<?php echo $tel; ?>">
+							<?php echo $tel_alt; ?>
 						</a>
 					</li>
 				<?php } ?>
