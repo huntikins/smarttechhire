@@ -40,9 +40,9 @@ get_header();
 <section id="what-sets-us-apart" class="p-6 md:p-8 lg:p-12">
 	<?php get_template_part('template-parts/content/home/content-apart', 'content'); ?>
 </section><!-- #what-sets-us-apart -->
-<section id="contact" class="p-6 pb-0 mt-12 md:p-8 lg:p-12 md:pb-0 lg:pb-0 md:mt-0 bg-primary lg:bg-transparent">
-	<?php get_template_part('template-parts/content/home/content-contact', 'content'); ?>
-</section><!-- #contact -->
+<!-- <section id="contact" class="p-6 pb-0 mt-12 md:p-8 lg:p-12 md:pb-0 lg:pb-0 md:mt-0 bg-primary lg:bg-transparent">
+	<?php //get_template_part('template-parts/content/home/content-contact', 'content'); ?>
+</section>#contact -->
 
 <?php
 get_footer();

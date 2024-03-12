@@ -107,14 +107,15 @@ if (!function_exists('sth_setup')):
 
 					$link = $menu_item->url;
 					$title = $menu_item->title;
+					$middle = (count($menu_items) / 2);
 
 					$logo = wp_get_attachment_image(get_theme_mod('title_logo_tagline'), 'thumbnail', "", array("class" => "block w-auto h-16"));
 
-					if ($count < (count($menu_items) / 2)) {
+					if ($count < $middle && $middle % 2) {
 						$menu_list .= '<li class="mt-5 md:mt-0 md:mr-5 lg:mr-7 hover:opacity-60">' . "\n";
 						$menu_list .= '<a href="' . $link . '" class="title" title="' . $title . '">' . $title . '</a>' . "\n";
 						$menu_list .= '</li>' . "\n";
-					} elseif ((count($menu_items) / 2) == $count) {
+					} elseif ($middle == $count) {
 						if ($logo) {
 
 							$menu_list .= '<li class="hidden mx-10 lg:block hover:opacity-60">' . "\n";
